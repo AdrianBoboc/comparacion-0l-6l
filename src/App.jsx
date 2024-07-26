@@ -10,15 +10,6 @@ const BLACK_MORRIGAN_VALUE = 0
 function App () {
   const armas = JSON.stringify(weaponJSON)
   const armasJsoned = JSON.parse(armas)
-  /* console.log('--------------------------------PRE---------------------------------------')
-  console.log(armasJsoned)
-
-  for (let i = 0; i < armasJsoned.length; i++) {
-    if (armasJsoned[i].detailsId.includes('relic')) {
-      console.log(armasJsoned[i])
-      armasJsoned.splice(i, 1)
-    }
-  } */
 
   for (let i = 0; i < armasJsoned.length; i++) {
     delete armasJsoned[i].itemClass
@@ -77,22 +68,6 @@ function App () {
 
   paresConDiferencia.sort((a, b) => b.diferenciaChaosValue - a.diferenciaChaosValue)
 
-  /* for (let i = 0; i < armasJsoned.length; i++) {
-    if (armasJsoned[i].detailsId.includes('relic')) {
-      console.log(armasJsoned[i])
-      armasJsoned.splice(i, 1)
-    }
-  }
-
-  for (let i = 0; i < armasJsoned.length; i++) {
-    if (armasJsoned[i].detailsId.includes('relic')) {
-      console.log(armasJsoned[i])
-      armasJsoned.splice(i, 1)
-    }
-  }
-
-  console.log('--------------------------------POST---------------------------------------')
-  console.log(armasJsoned) */
   return (
     <>
       <h1>The Black Morrigan value now: {BLACK_MORRIGAN_VALUE}</h1>
