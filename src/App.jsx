@@ -96,72 +96,44 @@ function App () {
   return (
     <>
       <h1>The Black Morrigan value now: {BLACK_MORRIGAN_VALUE}</h1>
-      <table className='table'>
+      <table>
         <tbody>
-
-          {
-            armasJsoned.map((arma, index) => (
-              index % 2 === 0 && (
-                <tr key={index}>
-                  <td>
-                    {/* Render the first object */}
-                    <div>
-                      <img src={arma.icon} alt={arma.name} />
-                      <p>{arma.name}</p>
-                      <p>{arma.detailsId}</p>
-                      <p>{arma.type}</p>
-                      <p>
-                        {arma.chaosValue}
-                        <img src='https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/d119a0d734/CurrencyRerollRare.png' alt='Chaos Value' />
-                      </p>
-                      <p>
-                        {arma.divineValue}
-                        <img src='https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/e1a54ff97d/CurrencyModValues.png' alt='Divine Value' />
-                      </p>
-                    </div>
-                  </td>
-                  {armasJsoned[index + 1] && (
-                    <td>
-                      {/* Render the second object */}
-                      <div>
-                        <img src={armasJsoned[index + 1].icon} alt={armasJsoned[index + 1].name} />
-                        <p>{armasJsoned[index + 1].name}</p>
-                        <p>{armasJsoned[index + 1].detailsId}</p>
-                        <p>{armasJsoned[index + 1].type}</p>
-                        <p>
-                          {armasJsoned[index + 1].chaosValue}
-                          <img src='https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/d119a0d734/CurrencyRerollRare.png' alt='Chaos Value' />
-                        </p>
-                        <p>
-                          {armasJsoned[index + 1].divineValue}
-                          <img src='https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/e1a54ff97d/CurrencyModValues.png' alt='Divine Value' />
-                        </p>
-                      </div>
-                    </td>
-                  )}
-                </tr>
-              )
-            ))
-          }
-
-          {
-            /* armasJsoned.map((arma, i) =>
-              <tr key={armasJsoned.id}>
-                <td><img src={arma.icon} /></td>
-                <td>{arma.name}</td>
-                <td>{arma.detailsId}</td>
-                <td>{arma.type}</td>
-                <td>
-                  {arma.chaosValue}
-                  <img src='https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/d119a0d734/CurrencyRerollRare.png' />
-                </td>
-                <td>
-                  {arma.divineValue}
-                  <img src='https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/e1a54ff97d/CurrencyModValues.png' />
-                </td>
-              </tr>
-            ) */
-          }
+          {paresConDiferencia.map((par, index) => (
+            <tr key={index}>
+              <td>
+                <div>
+                  <img src={par.arma1.icon} alt={par.arma1.name} />
+                  <p>{par.arma1.name}</p>
+                  <p>{par.arma1.detailsId}</p>
+                  <p>{par.arma1.type}</p>
+                  <p>
+                    {par.arma1.chaosValue}
+                    <img src='https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/d119a0d734/CurrencyRerollRare.png' alt='Chaos Value' />
+                  </p>
+                  <p>
+                    {par.arma1.divineValue}
+                    <img src='https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/e1a54ff97d/CurrencyModValues.png' alt='Divine Value' />
+                  </p>
+                </div>
+              </td>
+              <td>
+                <div>
+                  <img src={par.arma2.icon} alt={par.arma2.name} />
+                  <p>{par.arma2.name}</p>
+                  <p>{par.arma2.detailsId}</p>
+                  <p>{par.arma2.type}</p>
+                  <p>
+                    {par.arma2.chaosValue}
+                    <img src='https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lSZXJvbGxSYXJlIiwidyI6MSwiaCI6MSwic2NhbGUiOjF9XQ/d119a0d734/CurrencyRerollRare.png' alt='Chaos Value' />
+                  </p>
+                  <p>
+                    {par.arma2.divineValue}
+                    <img src='https://web.poecdn.com/gen/image/WzI1LDE0LHsiZiI6IjJESXRlbXMvQ3VycmVuY3kvQ3VycmVuY3lNb2RWYWx1ZXMiLCJ3IjoxLCJoIjoxLCJzY2FsZSI6MX1d/e1a54ff97d/CurrencyModValues.png' alt='Divine Value' />
+                  </p>
+                </div>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </>
